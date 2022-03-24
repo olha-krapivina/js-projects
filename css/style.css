@@ -1,0 +1,19 @@
+.table {
+  font-size: 24px;
+  border: 1px solid;
+}
+
+.table th {
+  border: 1px solid;
+  padding: 10px;
+}
+
+.table .grey {
+  background: grey;
+}
+
+.table td {
+  border: 1px solid;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */
