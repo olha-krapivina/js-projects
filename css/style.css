@@ -3,17 +3,20 @@
   border: 1px solid;
 }
 
-.table th {
+.table th, .table td {
   border: 1px solid;
   padding: 10px;
 }
 
-.table .grey {
-  background: grey;
+.first-name {
+  cursor: pointer;
 }
 
-.table td {
-  border: 1px solid;
-  padding: 10px;
+.color {
+  background: #aae4e5;
+}
+
+.colorless {
+  background: rgb #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
