@@ -4,12 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 24px;
+    font-size: 26px;
     color: #000;
 }
 
 html, body{
     height: 100%;
+    background: #ccc;
 }
 
 a{
@@ -49,7 +50,92 @@ p, span{
 //
 
 .wrap{
-    min-width: 300px;
+    max-width: 1040px;
     background: #ccc;
+
+    padding-top: 100px;
     margin: 0 auto;
+
+    .accordion-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .accordion-header,
+        .accordion-content{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .accordion-header{
+            align-items: center;
+            img{
+                border: 2px solid #000;
+                border-radius: 50%;
+
+                padding: 5px;
+
+                cursor: pointer;
+            }
+
+            .arrow{
+                width: 28px;
+                height: 28px;
+                border: 2px solid #000;
+                border-radius: 50%;
+
+                cursor: pointer;
+
+                &::after{
+                    content: url(../img/arrow_downward_black_24dp.svg);
+                }
+            }
+        }
+
+        .accordion-content{
+            // display: none;
+
+            background: #ccc;
+            border-radius: 5px;
+            border: 2px solid rgba(90, 90, 90, .75);
+
+            padding: 30px;
+            margin-top: 20px;
+
+            .accordion-avatar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                min-width: 200px;
+
+                background: #ccc;
+                border-radius: 5px;
+                border: 2px solid rgba(90, 90, 90, .75);
+            }
+
+            .accordion-data__1,
+            .accordion-data__2{
+                .data-profile:not(:first-child){
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .accordion-header,
+        .data-profile{
+            background: #ccc;
+            border-radius: 5px;
+            border: 2px solid rgba(90, 90, 90, .75);
+
+            padding: 10px 20px;
+        }
+    }
 }
