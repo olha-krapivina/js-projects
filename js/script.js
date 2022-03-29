@@ -52,15 +52,24 @@ var dataUsers = [
     }
 ];
 
+function addClass(data){
+    var el = data.querySelectorAll("div")
+    for(var item of el){
+        item.classList.add("data-profile");
+    }
+}
+
 function accordionCreate(accordionSelector, data){
     var container = document.querySelector(accordionSelector);
 
     for(var profile of data){
+        // HEADER
+
         // create section
         var section = document.createElement("section");
         section.className = "accordion-section";
 
-        // create header elements
+        // create elements
         var divHeader = document.createElement("div");
         var nameTitle = document.createElement("h2");
         var arrow = document.createElement("div");
@@ -75,6 +84,49 @@ function accordionCreate(accordionSelector, data){
         container.appendChild(section);
         section.appendChild(divHeader);
         divHeader.append(nameTitle, arrow);
+
+        // CONTENT
+
+        // create elements and add classes
+        var divContent = document.createElement("div");
+        divContent.className = "accordion-content";
+
+        section.appendChild(divContent);
+
+        var divAva = document.createElement("div");
+        divAva.className = "accordion-avatar";
+        divAva.innerHTML = '<p class="img-avatar">Avatar</p>';
+
+        var divData1 = document.createElement("div");
+        divData1.className = "accordion-data";
+        var divData2 = document.createElement("div");
+        divData2.className = "accordion-data";
+
+        var divInn = document.createElement("div");
+        divInn.className = "data-profile__inn";
+        var divName = document.createElement("div");
+        divName.className = "data-profile__name";
+        var divAge = document.createElement("div");
+        divAge.className = "data-profile__age";
+        var divEmail = document.createElement("div");
+        divEmail.className = "data-profile__email";
+        var divCity = document.createElement("div");
+        divCity.className = "data-profile__city";
+        var divGender = document.createElement("div");
+        divGender.className = "data-profile__gender";
+
+        // for(var key in data){
+        //     console.log(data[key])
+        //     divInn.innerHTML = `<b>${data[key]}</b>`;
+        // }
+        divInn.innerHTML = `<b>${profile.inn}</b>`;
+
+        divContent.append(divAva, divData1, divData2)
+        divData1.append(divInn, divName, divAge);
+        divData2.append(divEmail, divCity, divGender);
+
+        addClass(divData1);
+        addClass(divData2);
     }
 }
 
