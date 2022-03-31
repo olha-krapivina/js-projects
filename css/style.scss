@@ -77,6 +77,7 @@ p, span{
 
         .accordion-header{
             align-items: center;
+            cursor: pointer;
             img{
                 border: 2px solid #000;
                 border-radius: 50%;
@@ -108,7 +109,8 @@ p, span{
         }
 
         .accordion-content{
-            // display: none;
+            overflow: hidden;
+            transition: max-height 3s;
 
             background: #ccc;
             border-radius: 5px;
@@ -137,11 +139,11 @@ p, span{
         }
 
         .hide{
-            display: none;
+            display: none
         }
         
         .show{
-            display: block;
+            display: flex;
         }
 
         .accordion-header,
@@ -154,8 +156,3 @@ p, span{
         }
     }
 }
-
-// .accordion-content{
-//     overflow: hidden;
-//     transition: max-height 2s;
-// }

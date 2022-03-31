@@ -52,13 +52,6 @@ var dataUsers = [
     }
 ];
 
-function addClass(data){
-    var el = data.querySelectorAll("div")
-    for(var item of el){
-        item.classList.add("data-profile");
-    }
-}
-
 var active = null;
 
 function accordionDropdown(){
@@ -72,12 +65,29 @@ function accordionDropdown(){
     
     var isHide = content.classList.contains("hide");
     if(isHide){
-        content.classList.replace("hide", "show")
+        content.classList.replace("hide", "show");
     }
     else{
-        content.classList.replace("show", "hide")
+        content.classList.replace("show", "hide");
     }
 }
+
+function addClass(data){
+    var el = data.querySelectorAll("div");
+    for(var item of el){
+        item.classList.add("data-profile");
+    }
+}
+
+// function changeImg(img){
+//     var arrowForward = img.classList.contains("arrow-forward");
+//     if(arrowForward){
+//         img.classList.replace("arrow-forward", "arrow-downward");
+//     }
+//     else{
+//         img.classList.replace("arrow-downward", "arrow-forward");
+//     }
+// }
 
 function accordionCreate(accordionSelector, data){
     var container = document.querySelector(accordionSelector);
@@ -97,6 +107,8 @@ function accordionCreate(accordionSelector, data){
         divHeader.className = "accordion-header";
         arrow.className = "arrow arrow-forward";
 
+
+
         // insert html
         nameTitle.innerHTML = profile.name;
 
@@ -105,7 +117,7 @@ function accordionCreate(accordionSelector, data){
         section.appendChild(divHeader);
         divHeader.append(nameTitle, arrow);
 
-        // divHeader.onclick = accordionDropdown();
+        divHeader.onclick = accordionDropdown;
 
         // CONTENT
 
@@ -146,7 +158,7 @@ function accordionCreate(accordionSelector, data){
         divCity.innerHTML = `<b>${arrKey[4]}:</b> ${profile.city}`;
         divGender.innerHTML = `<b>${arrKey[5]}:</b> ${profile.gender}`;
 
-        divContent.append(divAva, divData1, divData2)
+        divContent.append(divAva, divData1, divData2);
         divData1.append(divInn, divName, divAge);
         divData2.append(divEmail, divCity, divGender);
 
