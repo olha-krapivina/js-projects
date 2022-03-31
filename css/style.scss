@@ -72,6 +72,7 @@ p, span{
         .accordion-content{
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .accordion-header{
@@ -92,7 +93,14 @@ p, span{
                 border-radius: 50%;
 
                 cursor: pointer;
+            }
 
+            .arrow-forward{
+                &::after{
+                    content: url(../img/arrow_forward_black_24dp.svg);
+                }
+            }
+            .arrow-downward{
                 &::after{
                     content: url(../img/arrow_downward_black_24dp.svg);
                 }
@@ -128,6 +136,14 @@ p, span{
             }
         }
 
+        .hide{
+            display: none;
+        }
+        
+        .show{
+            display: block;
+        }
+
         .accordion-header,
         .data-profile{
             background: #ccc;
@@ -138,3 +154,8 @@ p, span{
         }
     }
 }
+
+// .accordion-content{
+//     overflow: hidden;
+//     transition: max-height 2s;
+// }

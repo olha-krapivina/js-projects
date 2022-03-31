@@ -59,6 +59,26 @@ function addClass(data){
     }
 }
 
+var active = null;
+
+function accordionDropdown(){
+    var content = this.nextElementSibling;
+
+    if(active && content !== active){
+        active.classList.replace("show", "hide");
+    }
+
+    active = content;
+    
+    var isHide = content.classList.contains("hide");
+    if(isHide){
+        content.classList.replace("hide", "show")
+    }
+    else{
+        content.classList.replace("show", "hide")
+    }
+}
+
 function accordionCreate(accordionSelector, data){
     var container = document.querySelector(accordionSelector);
 
@@ -75,7 +95,7 @@ function accordionCreate(accordionSelector, data){
         var arrow = document.createElement("div");
 
         divHeader.className = "accordion-header";
-        arrow.className = "arrow";
+        arrow.className = "arrow arrow-forward";
 
         // insert html
         nameTitle.innerHTML = profile.name;
@@ -85,11 +105,13 @@ function accordionCreate(accordionSelector, data){
         section.appendChild(divHeader);
         divHeader.append(nameTitle, arrow);
 
+        // divHeader.onclick = accordionDropdown();
+
         // CONTENT
 
         // create elements and add classes
         var divContent = document.createElement("div");
-        divContent.className = "accordion-content";
+        divContent.className = "accordion-content hide";
 
         section.appendChild(divContent);
 
@@ -114,12 +136,15 @@ function accordionCreate(accordionSelector, data){
         divCity.className = "data-profile__city";
         var divGender = document.createElement("div");
         divGender.className = "data-profile__gender";
+        
+        var arrKey = Object.keys(profile); // names of keys
 
-        // for(var key in data){
-        //     console.log(data[key])
-        //     divInn.innerHTML = `<b>${data[key]}</b>`;
-        // }
-        divInn.innerHTML = `<b>${profile.inn}</b>`;
+        divInn.innerHTML = `<b>${arrKey[6]}:</b> ${profile.inn}`;
+        divName.innerHTML = `<b>${arrKey[1]}:</b> ${profile.name}`;
+        divAge.innerHTML = `<b>${arrKey[3]}:</b> ${profile.age}`;
+        divEmail.innerHTML = `<b>${arrKey[2]}:</b> ${profile.email}`;
+        divCity.innerHTML = `<b>${arrKey[4]}:</b> ${profile.city}`;
+        divGender.innerHTML = `<b>${arrKey[5]}:</b> ${profile.gender}`;
 
         divContent.append(divAva, divData1, divData2)
         divData1.append(divInn, divName, divAge);
