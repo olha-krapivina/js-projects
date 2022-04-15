@@ -1,3 +1,5 @@
+"use strict";
+
 const notes = [{
     "id": 1,
     "title": "Rock-a-Bye Baby",
