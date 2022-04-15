@@ -57,7 +57,7 @@ p, span {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 100%;
-  margin: 40px;
+  padding: 40px;
 }
 
 ._wrapper ._container {
