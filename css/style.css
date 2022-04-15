@@ -86,6 +86,7 @@ p, span {
 }
 
 .card {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,6 +105,22 @@ p, span {
           box-shadow: 0 0px 9px rgba(0, 0, 0, 0.75);
   padding: 25px;
   margin-bottom: 40px;
+}
+
+.card .popular {
+  position: absolute;
+  top: -10px;
+  right: -60px;
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+  width: 200px;
+  background: #22797e;
+  z-index: 99;
+}
+
+.card .popular p {
+  text-align: center;
+  color: #fff;
 }
 
 .card .card-header {
