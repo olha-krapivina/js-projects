@@ -99,6 +99,10 @@ p, span{
     .card-header{
         display: flex;
         justify-content: space-between;
+
+        .card-title{
+            margin-right: 20px;
+        }
     }
 
     .card-preview-description{

@@ -115,6 +115,10 @@ p, span {
           justify-content: space-between;
 }
 
+.card .card-header .card-title {
+  margin-right: 20px;
+}
+
 .card .card-preview-description p {
   text-align: center;
 }
