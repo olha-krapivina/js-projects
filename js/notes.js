@@ -110,4 +110,4 @@ const notes = [{
     "description": "2-part nondisplaced fracture of surgical neck of right humerus, subsequent encounter for fracture with nonunion",
     "date": "2/18/2022",
     "isPopular": true
-   }]
+   }];

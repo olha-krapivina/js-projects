@@ -1,0 +1,128 @@
+// reset
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #000;
+}
+
+html, body{
+    height: 100%;
+    background: cadetblue;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+}
+
+p, span{
+    padding: 0;
+    margin: 0;
+}
+
+//
+
+._wrapper{
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100%;
+
+    margin: 40px;
+
+    ._container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        max-width: 1120px;
+        background: #fff;
+        border-radius: 10px;
+
+        padding: 40px 40px 0 40px;
+        margin: 0 auto;
+    }
+}
+
+._card-design{
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 500px;
+
+    background: #ccc;
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 0 0px 9px rgba(0, 0, 0, .75);
+
+    padding: 25px;
+    margin-bottom: 40px;
+
+    .card-header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-preview-description{
+        p{
+            text-align: center;
+        }
+    }
+
+    .card-btn{
+        align-self: flex-end;
+        width: 150px;
+
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 24px;
+        color: #000;
+        border-radius: 5px;
+        border: 1px solid #000;
+
+        padding: 10px;
+
+        cursor: pointer;
+        transition: .5s;
+
+        &:hover{
+            box-shadow: 0 0px 9px rgba(0, 0, 0, .75);
+        }
+    }
+}
