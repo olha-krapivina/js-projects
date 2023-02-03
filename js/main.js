@@ -1,12 +1,17 @@
 "use strict";
 
-(function (){
-    const container = document.querySelector("#container");
+(function() {
+    const container = document.querySelector("#container"); 
 
-    const createCardStructure = ( {title, date, preview} ) => `
+    const createPopularSticker = (isPopular) => isPopular ? `
         <div class="popular _card-design">
             <p><b>Popular</b></p>
         </div>
+    ` : "";
+
+    const createCardStructure = ({ title, date, preview, isPopular }) => `
+        ${createPopularSticker(isPopular)}
+
         <div class="card-header">
             <div class="card-title _card-design"><span><b>${title}</b></span></div>
             <div class="card-date _card-design"><span><b>${date}</b></span></div>
